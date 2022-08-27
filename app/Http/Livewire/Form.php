@@ -42,11 +42,7 @@ class Form extends Component implements HasForms
                     ->modalHeading('Create tag')
                     ->modalButton('Create tag')
                     ->modalWidth('md')
-                    ->mutateFormDataUsing(function (array $data): array {
-                        $data['seller_id'] = auth()->id();
-
-                        return $data;
-                    }))
+                )
                 ->required(),
         ];
     }
