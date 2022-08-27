@@ -17,7 +17,9 @@ class Form extends Component implements HasForms
 
     public Product $product;
 
-    public $name;
+    public $product_name;
+
+    public $tag_name;
 
     public function mount(): void
     {
@@ -29,10 +31,10 @@ class Form extends Component implements HasForms
     protected function getFormSchema(): array
     {
         return [
-            MultiSelect::make('name')
-                ->relationship('tags', 'name')
+            MultiSelect::make('product_name')
+                ->relationship('tags', 'tag_name')
                 ->createOptionForm([
-                    TextInput::make('name')
+                    TextInput::make('tag_name')
                         ->required()
                         ->rules(['string', 'max:255']),
                 ])

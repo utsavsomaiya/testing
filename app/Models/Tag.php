@@ -14,7 +14,7 @@ class Tag extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'tag_name',
     ];
 
     public function products(): BelongsToMany
